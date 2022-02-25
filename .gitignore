@@ -6,7 +6,7 @@
 .pnp.js
 .eslintcache
 /debug.txt
-.env
+# .env
 test.js
 # testing
 /coverage
