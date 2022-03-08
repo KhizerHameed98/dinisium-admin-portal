@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { getWithdrawRequest } from "../../../../Services/getWithdrawRequest";
+import Route from "../../../../Constants/browserRoutes";
+import { useHistory } from "react-router";
 import {
   getKycbyId,
   GetKycStatus,
@@ -17,7 +19,7 @@ const ViewDetails = (props) => {
 
   const id = props.location.state.id;
   const kyc_id = props.location.state.kycid;
-
+  const history = useHistory();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -34,6 +36,7 @@ const ViewDetails = (props) => {
       status: "approved",
     };
     dispatch(approveWithdraw(data, id));
+    history.push(Route.REQUEST_WITHDRAW);
   };
 
   const rejectRequest = () => {
@@ -55,6 +58,7 @@ const ViewDetails = (props) => {
     };
     dispatch(rejectWithdraw(dataa, id, setShow));
     setShow(false);
+    history.push(Route.REQUEST_WITHDRAW);
   };
 
   return (

@@ -24,10 +24,11 @@ const UserDetails = ({ match, getInvestmentDetailByUserId, ...otherprops }) => {
   );
 
   const filtered = data?.filter((items) => items?.balance !== "0");
+  // console.log("filtered :", filtered);
 
   const datas = useSelector((state) => console.log("aa", state));
 
-  console.log(otherprops);
+  // console.log(otherprops);
 
   //No. of Items Per Screen
 
@@ -35,7 +36,7 @@ const UserDetails = ({ match, getInvestmentDetailByUserId, ...otherprops }) => {
     setScreen(value);
   };
   const countData = data && data.length;
-  console.log("Investment Details============>", data);
+  // console.log("Investment Details============>", data);
   const dispatch = useDispatch();
 
   //noOfScreens

@@ -37,21 +37,25 @@ const CreateIto = ({
   } = formData;
 
   const defaultValues = {};
-  console.log("ito name", defaultValues);
+  // console.log("ito name", defaultValues);
   const [draftUpdatedData, setDraftUpdatedData] = useState({
     namee: updatedData?.ito_name,
     start_datee: updatedData?.start_date,
   });
-  console.log("ito nowww", draftUpdatedData);
+  // console.log("ito nowww", draftUpdatedData);
   const { namee, start_datee } = draftUpdatedData;
 
-  console.log("drafts", updatedrafts);
-  console.log("itoname", namee);
+  // console.log("drafts", updatedrafts);
+  // console.log("itoname", namee);
 
   const allAdmins = useSelector((state) => state.ito?.allAdmins || []);
+
   const subscriptionDetail = useSelector(
     (state) => state.subscription?.subscriptionDetail || {}
   );
+
+  console.log("SUBSCRIPTION DETAILS :", subscriptionDetail);
+
   const subscriptionAdmins = useSelector(
     (state) => state.subscription?.admins || []
   );
@@ -63,7 +67,7 @@ const CreateIto = ({
     );
   });
 
-  console.log("TERMSHEETS", termSheet);
+  // console.log("TERMSHEETS", termSheet);
   const dispatch = useDispatch();
   const newFile = new File([`abc`], `${termSheet}`, {
     type: "plain/text",
@@ -106,13 +110,13 @@ const CreateIto = ({
     //     sheet.name === files.find((file) => file.name === sheet.name)?.name
     // );
 
-    console.log("file====>", files);
+    // console.log("file====>", files);
     const fileExist = term_sheets.some(
       (sheet) =>
         sheet.name === files.find((file) => file.name === sheet.name)?.name
     );
 
-    console.log("aa", fileExist);
+    // console.log("aa", fileExist);
     setFileExist(fileExist);
 
     setFormData({
@@ -157,7 +161,7 @@ const CreateIto = ({
                   value={
                     location.pathname == "/admin/ito-management/create-new-ito"
                       ? name
-                      : draftUpdatedData.namee
+                      : subscriptionDetail.ito_name
                   }
                   // value={name}
                   ref={refName}

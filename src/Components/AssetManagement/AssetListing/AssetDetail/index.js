@@ -117,7 +117,7 @@ const AssetDetail = ({ match }) => {
                   </li>
                   <li className="col-12 col-md-6" style={{ border: "0px" }}>
                     <span>Created at</span>
-                    <span>{assets?.asset_created_at}</span>
+                    <span> <Moment format="DD-MM-YYYY hh:mm:ss">{assets?.asset_created_at}</Moment></span>
                   </li>
                 </ul>
               </div>

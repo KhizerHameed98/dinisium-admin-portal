@@ -47,7 +47,7 @@ const ApprovedRequests = ({ getAllDepositesList, adminRequest }) => {
           columns={columns}
           isViewDetailBtn={true}
           RouteBtn={browserRoute.ADMIN_REQUESTS_DETAILS_BTN}
-          title={"Approved REQUESTS"}
+          title={"Approved Requests"}
         />
       </div>
     </div>

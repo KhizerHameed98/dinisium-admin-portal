@@ -56,27 +56,27 @@ const AdminRequest = ({ adminRequest, getDepositesList }) => {
                 columns={columns}
                 isViewDetailBtn={true}
                 RouteBtn={browserRoute.ADMIN_REQUESTS_DETAILS_BTN}
-                title={"PENDING DEPOSIT LIST"}
+                title={"Pending Deposit List"}
               />
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="col-md-12  mt-5">
-        <div className="card-body  p-0">
+        <div className="col-md-12  mt-3">
+          {/* <div className="card-body  p-0"> */}
           <SingleApproved />
+          {/* </div> */}
         </div>
-      </div>
 
-      <div className="col-md-12 mb-5 mt-5">
-        <div className="card-body  p-0">
+        <div className="col-md-12  mt-3">
+          {/* <div className="card-body  p-0"> */}
           <ApprovedRequests />
+          {/* </div> */}
         </div>
-      </div>
-      <div className="col-md-12 mb-5 mt-5">
-        <div className="card-body  p-0">
+        <div className="col-md-12 mb-5 mt-3">
+          {/* <div className="card-body  p-0"> */}
           <RejectedRequests />
+          {/* </div> */}
         </div>
       </div>
     </div>

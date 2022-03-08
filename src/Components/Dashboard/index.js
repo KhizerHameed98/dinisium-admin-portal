@@ -97,7 +97,7 @@ const Dashboard = () => {
       setId(tokenID[1].ito_id);
       setTokenName(tokenID[1].tokenName);
       setCount(true);
-      setSelectDefaultValue(tokenID[1])
+      setSelectDefaultValue(tokenID[1]);
     }
   }, [tokenID]);
   const handleClick = (e) => {
@@ -123,7 +123,6 @@ const Dashboard = () => {
       setTokenName(e.tokenName);
       setSelectDefaultValue(e);
     }
-
   };
 
   const handleClickTime = (e, obj) => {
@@ -175,6 +174,7 @@ const Dashboard = () => {
       <div className="row">
         <div className="col-md-12">
           {/* shortReport compo */}
+
           <ShortReport />
         </div>
         <div className="col-12 col-md-12 mb-4 graph-card">
@@ -249,7 +249,7 @@ const Dashboard = () => {
                 >
                   {item.token_name}
                 </DropdownItem>
-              ))}
+              ))}console.l
             </DropdownButton> */}
 
             <DropdownButton id="dropdown-basic-button" title={time}>
@@ -297,13 +297,13 @@ const Dashboard = () => {
               </DropdownItem>
             </DropdownButton>
           </div>
-          {candleGraph && <CandleChart tokenID={tokenID} />}
+          {candleGraph && <CandleChart tokenID={tokenID} checkDates={time} />}
           {marketcapGraph && (
             <MarketcapLineChart chartData={martketcapdata?.data} />
           )}
           {soldtokens && <SoldTokensGraph chartData={soldtokengragh} />}
           {dataGraph && <DefaultChart chartData={allData} />}
-        </div>{console.log(candleGraph,marketcapGraph,soldtokens,dataGraph)}
+        </div>
         <div className="row flex justify-content-start mr-1 ml-1">
           <div className="">
             <button

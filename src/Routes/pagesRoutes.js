@@ -154,6 +154,10 @@ const UpdateSubscriptionDraft = React.lazy(() =>
   import("../Components/Subscription/UpdateSubscription/UpdateSubscription")
 );
 
+const UpdateAssetDrafts = React.lazy(() =>
+  import("../Components/AssetManagement/UpdateAssetDrafts/UpdateAssetDrafts")
+);
+
 const pageRoutes = [
   {
     path: Route.PROFILE,
@@ -416,6 +420,12 @@ const pageRoutes = [
     name: "AssetManagement",
     component: AssetManagement,
     permissionName: "assetManagement",
+  },
+  {
+    path: Route.UPDATE_ASSET_DRAFT,
+    exact: true,
+    name: "AssetManagement",
+    component: UpdateAssetDrafts,
   },
   {
     path: Route.ASSET_MANAGEMENT_DETAILS,

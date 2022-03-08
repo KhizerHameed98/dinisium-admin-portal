@@ -108,7 +108,7 @@ const CreateSubscription = () => {
   const subsDetail = useSelector((state) => {
     return state?.subscription?.subscriptionData?.data;
   });
-
+  console.log("SUBS DEYAILS==========>:", subsDetail);
   useEffect(() => {
     // same for subscription and ito
     dispatch(getAllAdminToAssignItos());
@@ -177,7 +177,7 @@ const CreateSubscription = () => {
                         placeholder="ITO Series Name"
                         className="form-control"
                         name="itoSeries"
-                        value={itoSeries || subsDetail?.[0]?.ito_series}
+                        value={itoSeries}
                         onChange={(e) => onChange(e)}
                         required={isRequiredd}
                       />
@@ -190,7 +190,7 @@ const CreateSubscription = () => {
                       placeholder="Token Name"
                       className="form-control"
                       name="tokenName"
-                      value={tokenName || subsDetail?.[0]?.ito_token}
+                      value={tokenName}
                       onChange={(e) => onChange(e)}
                       required={isRequiredd}
                     />
@@ -228,7 +228,7 @@ const CreateSubscription = () => {
                           placeholder="Enter Threshold in Dollars"
                           className="form-control"
                           name="threshold"
-                          value={threshold || subsDetail?.[0]?.threshold}
+                          value={threshold}
                           onChange={(e) => onThresholdChange(e)}
                           required={isRequiredd}
                         />

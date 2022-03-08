@@ -2,27 +2,23 @@ import browserRoute from "../../../Constants/browserRoutes";
 
 export const columns = (viewDetaill) => {
   return [
-
-    {title:"ITO Name" , field:"ito_name"},
-    {title:"ITO Series", field:"ito_series" } ,
-    {title:"Start Date" , field:"created_at"},
-    {title:" Token Supply " , field:"token_supply"},
-    {title:"Status" , field:"ito_status"},
+    { title: "ITO Name", field: "ito_name" },
+    { title: "ITO Series", field: "ito_series" },
+    { title: "Start Date", field: "created_at" },
+    { title: " Token Supply ", field: "token_supply" },
+    { title: "Status", field: "ito_status" },
 
     {
       title: null,
       field: "button",
       render: (rowData) => (
-    
-   
-          <button
-            style={{ marginRight: "3%" }}
-            className="dls-btn bg-semi-black text-white width-max-content"
-           onClick={()=>viewDetaill(rowData.id)}
-          >
-            View Details
-          </button>
- 
+        <button
+          style={{ marginRight: "3%" }}
+          className="dls-btn bg-semi-black text-white width-max-content"
+          onClick={() => viewDetaill(rowData.id)}
+        >
+          View Details
+        </button>
       ),
     },
     // {title:"Status" , field:""},

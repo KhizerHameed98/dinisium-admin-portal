@@ -23,6 +23,12 @@ const AddNewAsset = () => {
 
   const { name, price, unit, total_supply } = formData;
 
+  if (typeof formData === "object") {
+    console.log("object");
+  } else {
+    console.log("not object");
+  }
+
   const onChange = (e) => {
     const re = /^[0-9\b]+$/;
     if (e.target.value === "" || re.test(e.target.value)) {
@@ -47,6 +53,8 @@ const AddNewAsset = () => {
     dispatch(addNewAsset({ formData, setFormData, defaultValues, setLoading }));
     setShow(false);
   };
+
+  const handleAssetDraft = () => {};
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -147,6 +155,14 @@ const AddNewAsset = () => {
                   CREATE NEW ASSET
                 </button>
               </form>
+              <button
+                type="submit"
+                className="btn btn-primary btn-lg assetDraft"
+                onClick={handleAssetDraft}
+              >
+                {/* <span className="spinner-border spinner-border-sm"></span> */}
+                SAVE AS DRAFT
+              </button>
             </div>
           </div>
         </div>

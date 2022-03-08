@@ -88,7 +88,7 @@ const browserRoute = {
   CREATE_SUBSCRIPTION: "/admin/create-subscription",
   SUBSCRIPTION_DETAIL: "/admin/subscription/detail/:id",
   SUBSCRIPTION_DETAIL_BTN: "/admin/subscription/detail/",
-  UPDATE_SUBSCRIPTION_DRAFT :"/admin/updatesubscriptiondraft/:id",
+  UPDATE_SUBSCRIPTION_DRAFT: "/admin/updatesubscriptiondraft/:id",
 
   CREATE_ITO_FOR_SUBSCIRPTION: "/admin/subscription/create-ito/:id",
   CREATE_ITO_FOR_SUBSCIRPTION_BTN: "/admin/subscription/create-ito/", // :id
@@ -97,6 +97,8 @@ const browserRoute = {
 
   APPROVED_REQUEST: "/admin/approvedrequest",
   UPDATE_SERIES_DRAFT: "/admin/updateseriesdrafts/:id",
+
+  UPDATE_ASSET_DRAFT: "/admin/updateassetdrafts",
 };
 
 export default browserRoute;

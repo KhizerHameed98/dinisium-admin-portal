@@ -16,11 +16,11 @@ const CreateNewSeries = ({
   updatedrafts,
   location,
   updatedData,
-  seriesName ,
-  seriesSupply ,
-  series_start_date ,
-  series_end_date ,
-  descriptionnn ,
+  seriesName,
+  seriesSupply,
+  series_start_date,
+  series_end_date,
+  descriptionnn,
   // draftUpdatedData,
   // setDraftUpdatedData,
 }) => {
@@ -77,8 +77,6 @@ const CreateNewSeries = ({
     draftUpdatedData;
   console.log("name", namee);
 
-  
-
   return (
     <>
       <div className="col-md-12">
@@ -107,10 +105,10 @@ const CreateNewSeries = ({
                       location.pathname ===
                       "/admin/ito-management/create-new-ito"
                         ? name
-                        : draftUpdatedData.ito_seriesnamee
+                        : subscriptionDetail.ito_series
                     }
                     // value={name}
-                    ref={  seriesName}
+                    ref={seriesName}
                     disabled={isSubscription}
                     onChange={(e) => onChange(e)}
                     required={isRequired}
@@ -136,10 +134,10 @@ const CreateNewSeries = ({
                       location.pathname ===
                       "/admin/ito-management/create-new-ito"
                         ? supply
-                        :draftUpdatedData.series_supplyy
+                        : draftUpdatedData.series_supplyy
                     }
                     // disabled={isSubscription}
-                    ref={  seriesSupply}
+                    ref={seriesSupply}
                     onChange={(e) => onSupplyChange(e)}
                     required={isRequired}
                   />
@@ -171,7 +169,7 @@ const CreateNewSeries = ({
                   }
                   // value={start_date}
                   onChange={(e) => onChange(e)}
-                  ref={  series_start_date}
+                  ref={series_start_date}
                   required={isRequired}
                 />
               </div>
@@ -228,7 +226,7 @@ const CreateNewSeries = ({
                   }
                   // value={description}
                   onChange={(e) => onChange(e)}
-                  ref={  descriptionn}
+                  ref={descriptionn}
                   required={isRequired}
                 ></textarea>
               </div>

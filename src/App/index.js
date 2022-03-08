@@ -42,7 +42,7 @@ const App = () => {
       document.title = "Dinisium";
     }
   }, [isAuthenticated]);
-  const [time, setTime] = useState("Month");
+  const [time, setTime] = useState("Year");
   const [tokenName, setTokenName] = useState("Select ITO");
 
   return (

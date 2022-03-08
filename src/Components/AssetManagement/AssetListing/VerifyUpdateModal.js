@@ -145,7 +145,7 @@ const AssetModal = ({
             </button>
             <button
               type="button"
-              className="btn btn-danger w-25 btn-md"
+              className="btn btn-secondary w-25 btn-md"
               onClick={showModal}
               disabled={loading}
             >
@@ -180,7 +180,7 @@ const AssetModal = ({
             <br />
             <button
               type="button"
-              className="btn btn-danger w-30 btn-md mr-2"
+              className="btn btn-seconday w-30 btn-md mr-2"
               onClick={(e) => verifyUpdation(e, id, "rejected")}
             >
               Reject

@@ -88,6 +88,8 @@ const EditAssetModal = ({
 
     if (updated_total_supply < 0 || updated_remaining_supply < 0) {
       toast.error("Updated Supply or remaining supply cannot be negative");
+    } else if (newSupply < 0) {
+      toast.error("New Supply cannot be negative");
     } else if (
       obj.update_pricee === updated_price &&
       obj.newSupply === newSupply &&

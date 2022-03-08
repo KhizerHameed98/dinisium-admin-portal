@@ -47,7 +47,7 @@ const RejectedRequests = ({ getAllDepositesList, adminRequest }) => {
           columns={columns}
           isViewDetailBtn={true}
           RouteBtn={browserRoute.ADMIN_REQUESTS_DETAILS_BTN}
-          title={"REJECTED REQUESTS"}
+          title={"Rejected Requests"}
         />
       </div>
     </div>

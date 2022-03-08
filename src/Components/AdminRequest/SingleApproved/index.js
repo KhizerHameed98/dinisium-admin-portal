@@ -48,7 +48,7 @@ const SingleApproved = ({
           columns={columns}
           isViewDetailBtn={true}
           RouteBtn={browserRoute.ADMIN_REQUESTS_DETAILS_BTN}
-          title={"SINGLE APPROVED REQUESTS"}
+          title={"Single Approved Requests"}
         />
       </div>
     </div>

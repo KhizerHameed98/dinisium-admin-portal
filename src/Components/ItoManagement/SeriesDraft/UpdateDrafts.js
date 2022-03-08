@@ -6,7 +6,7 @@ import {
   updateSeriesDraft,
 } from "../../../Services/itoServices";
 import moment from "moment";
-import { SettingsOverscanOutlined } from "@material-ui/icons";
+
 
 const UpdateDrafts = () => {
   const [loading, setLoading] = useState(false);
@@ -18,20 +18,25 @@ const UpdateDrafts = () => {
   );
 
   const updatedDrafts = useSelector(
-    (state) => state.ito.GET_SERIESDRAFTS_BY_ID
+    (state) => state?.ito?.GET_SERIESDRAFTS_BY_ID[0]
   );
 
-  const { name, supply, start_date, end_date, description, ito_id } =
-    updatedDrafts;
+  console.log("updatedDrafts", updatedDrafts);
 
-  const [formData, setFormData] = useState({
-    name: name,
-    supply: supply,
-    start_date: start_date,
-    end_date: end_date,
-    description: description,
-    ito_id: ito_id,
-  });
+  const [formData, setFormData] = useState({});
+
+  useEffect(() => {
+    setFormData({
+      name: updatedDrafts?.series_name,
+      supply: updatedDrafts?.supply,
+      start_date: updatedDrafts?.start_date,
+      end_date: updatedDrafts?.end_date,
+      description: updatedDrafts?.description,
+      ito_id: updatedDrafts?.ito_id,
+    });
+  }, [updatedDrafts]);
+
+  console.log("formData name", formData.name);
 
   const onSupplyChange = (e) => {
     const re = /^[0-9\b]+$/;
@@ -72,7 +77,6 @@ const UpdateDrafts = () => {
                           className="form-control"
                           name="name"
                           value={formData.name}
-                        
                         />
                       </div>
                     </div>
@@ -86,7 +90,6 @@ const UpdateDrafts = () => {
                           name="supply"
                           value={formData.supply}
                           onChange={(e) => onSupplyChange(e)}
-                    
                         />
                       </div>
                     </div>
@@ -120,7 +123,6 @@ const UpdateDrafts = () => {
                         min={new Date().toISOString().split("T")[0]}
                         onChange={(e) => onChange(e)}
                         onLoad={formData.start_date}
-              
                       />
                     </div>
                     <div className="col-sm-6">
@@ -134,7 +136,6 @@ const UpdateDrafts = () => {
                           value={moment(formData.end_date).format("YYYY-MM-DD")}
                           min={new Date().toISOString().split("T")[0]}
                           onChange={(e) => onChange(e)}
-             
                         />
                       </div>
                     </div>

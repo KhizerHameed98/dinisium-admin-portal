@@ -2,7 +2,7 @@ export const columns = () => {
   return [
     {
       title: "Token Name",
-      field: "ito_name",
+      field: "token_name",
       customSort: (a, b) => {
         let x = a.ito_name.toUpperCase(),
           y = b.ito_name.toUpperCase();
@@ -11,7 +11,7 @@ export const columns = () => {
     },
     {
       title: "Tokens",
-      field: "balance",
+      field: "holdings",
       customSort: (a, b) => {
         let x = Number(a.balance),
           y = Number(b.balance);
@@ -20,11 +20,8 @@ export const columns = () => {
     },
     {
       title: "Amount",
-      field: "amount",
-      customSort: (a, b) => {
-        let x = Number(a.amount),
-          y = Number(b.amount);
-        return x == y ? 0 : x > y ? 1 : -1;
+      render: (rowData) => {
+        return `${parseFloat(rowData.price).toFixed(3)}`;
       },
     },
   ];

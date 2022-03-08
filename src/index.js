@@ -13,6 +13,8 @@ import dotenv from "dotenv";
 import { loadUser } from "./Redux/actions/actions";
 
 import setAuthToken from "./utils/setAuthToken";
+import { ErrorBoundary } from "react-error-boundary";
+import Fallback from "./Components/FallBack/Fallback";
 if (localStorage.token) setAuthToken(localStorage.token);
 
 function App() {
@@ -21,15 +23,20 @@ function App() {
     store.dispatch(loadUser());
   }, []);
 
+  const errorHandler = (error, errorinfo) => {
+    console.log("error ", error, errorinfo);
+  };
   // console.log(store.getState());
   return (
     <Fragment>
-      <ToastContainer />
-      <Provider store={store}>
-        <BrowserRouter>
-          <AppIndex />
-        </BrowserRouter>
-      </Provider>
+      <ErrorBoundary FallbackComponent={Fallback} onError={errorHandler}>
+        <ToastContainer />
+        <Provider store={store}>
+          <BrowserRouter>
+            <AppIndex />
+          </BrowserRouter>
+        </Provider>
+      </ErrorBoundary>
     </Fragment>
   );
 }

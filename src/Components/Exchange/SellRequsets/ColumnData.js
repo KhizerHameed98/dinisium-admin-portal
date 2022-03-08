@@ -103,7 +103,7 @@ export const columns = (
             <>
               {" "}
               <button
-                className="dls-btn bg-semi-black text-white btn btn-dark"
+                className="dls-btn bg-semi-black text-white btn btn-primary"
                 onClick={approveTransaction}
                 disabled={
                   rowData?.disable === undefined ? false : rowData?.disable
@@ -148,7 +148,7 @@ export const columns = (
                 </Modal.Footer>
               </Modal>
               <button
-                className="dls-btn bg-semi-black text-white btn btn-dark rej"
+                className="dls-btn bg-semi-black text-white btn btn-secondary rej"
                 onClick={approveTransaction}
                 disabled={
                   rowData?.disable === undefined ? false : rowData?.disable

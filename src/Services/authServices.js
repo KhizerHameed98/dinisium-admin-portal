@@ -179,9 +179,65 @@ export const login =
           setLoading(false);
           history.push(Route.DASHBOARD);
           toast.success("Logged In Successfully");
-          if (localStorage.token) {
-            setAuthToken(localStorage.token);
+          if (localStorage.token) setAuthToken(localStorage.token);
+        } else if (
+          res.data &&
+          res.data.data &&
+          res.data.data.authentication === "email"
+        ) {
+          await dispatch({
+            type: LOGIN_MSG,
+            payload: { authentication: res.data.data },
+          });
+          setVerificationPage({
+            emailPage: true,
+            smsPage: false,
+            googlePage: false,
+          });
+
+          setUserId(res.data.data.id);
+          toast.success(res.data.msg);
+        } else if (
+          res.data &&
+          res.data.data &&
+          res.data.data.authentication === "sms"
+        ) {
+          await dispatch({
+            type: LOGIN_MSG,
+            payload: { authentication: res.data.data },
+          });
+
+          if (res.data.result && res.data.result.request_id) {
+            setRequestIdSms(res.data.result.request_id);
+            setVerificationPage({
+              emailPage: false,
+              smsPage: true,
+              googlePage: false,
+            });
+
+            setUserId(res.data.data.id);
+            toast.success(res.data.msg);
+          } else {
+            toast.error("Message not sending properly");
+            setLoading(false);
           }
+        } else if (
+          res.data &&
+          res.data.data &&
+          res.data.data.authentication === "google"
+        ) {
+          await dispatch({
+            type: LOGIN_MSG,
+            payload: { authentication: res.data.data },
+          });
+          setVerificationPage({
+            emailPage: false,
+            smsPage: false,
+            googlePage: true,
+          });
+
+          setUserId(res.data.data.id);
+          toast.success(res.data.msg);
         }
       })
       .catch((err) => {

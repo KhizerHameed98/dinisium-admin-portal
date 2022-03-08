@@ -15,15 +15,15 @@ import Route from "../../../../Constants/browserRoutes";
 import { useHistory } from "react-router";
 
 const ViewDetail = (props) => {
-  console.log("props", props);
-  console.log("id", props?.location?.state);
+  // console.log("props", props);
+  // console.log("id", props?.location?.state);
 
   const amount = props?.location?.state?.amount;
   const history = useHistory();
 
-  const states = useSelector((state) => {
-    console.log("inside ViewDetail", state);
-  });
+  // const states = useSelector((state) => {
+  //   console.log("inside ViewDetail", state);
+  // });
 
   const [show, setShow] = useState(false);
   const [buttonDisabled, setButtonDisabled] = useState(false);
@@ -44,7 +44,7 @@ const ViewDetail = (props) => {
   // console.log("data is", kycData);
 
   const KycDataa = useSelector((state) => state?.kyc?.response?.data);
-  console.log("now", KycDataa);
+  // console.log("now", KycDataa);
 
   // console.log("...", state);
 

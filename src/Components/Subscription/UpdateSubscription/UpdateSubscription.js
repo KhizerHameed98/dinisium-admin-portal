@@ -10,6 +10,7 @@ import {
   updateSubscriptionDraftsById,
   updateSubscriptionsDraft,
 } from "../../../Services/subscription";
+import moment from "moment";
 
 const UpdateSubscription = () => {
   const [loading, setLoading] = useState(false);
@@ -261,9 +262,9 @@ const UpdateSubscription = () => {
                           placeholder="Enter Start Date"
                           className="form-control"
                           name="startDate"
-                          value={
+                          value={moment(
                             formData.startDate || subsDetail?.[0]?.start_date
-                          }
+                          ).format("YYYY-MM-DD")}
                           onChange={(e) => onChange(e)}
                           // required={isRequiredd}
                         />
@@ -277,7 +278,9 @@ const UpdateSubscription = () => {
                           placeholder="Enter End Date"
                           className="form-control"
                           name="endDate"
-                          value={formData.endDate || subsDetail?.[0]?.end_date}
+                          value={moment(
+                            formData.endDate || subsDetail?.[0]?.end_date
+                          ).format("YYYY-MM-DD")}
                           onChange={(e) => onChange(e)}
                           // required={isRequiredd}
                         />

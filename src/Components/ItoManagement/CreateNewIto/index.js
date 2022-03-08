@@ -555,25 +555,29 @@ const CreateNewIto = (props) => {
           </div>
         </form>
         {location.pathname === "/admin/ito-management/create-new-ito" ? (
-          <button
-            type="submit"
-            className="btn btn-primary btn-lg w-100 mt-2"
-            // disabled={loading}
-            onClick={handleSaveasDraft}
-          >
-            {" "}
-            SAVE AS DRAFT
-          </button>
+          <div className="col-md-12">
+            <button
+              type="submit"
+              className="btn btn-primary btn-lg w-100 mt-2"
+              // disabled={loading}
+              onClick={handleSaveasDraft}
+            >
+              {" "}
+              SAVE AS DRAFT
+            </button>
+          </div>
         ) : (
-          <button
-            type="submit"
-            className="btn btn-primary btn-lg w-100 mt-2"
-            // disabled={loading}
-            onClick={handleUpdateDraft}
-          >
-            {" "}
-            UPDATE DRAFT
-          </button>
+          <div className="col-md-12">
+            <button
+              type="submit"
+              className="btn btn-primary btn-lg w-100 mt-2"
+              // disabled={loading}
+              onClick={handleUpdateDraft}
+            >
+              {" "}
+              UPDATE DRAFT
+            </button>
+          </div>
         )}
       </div>
       {/* <!-- end inner row --> */}

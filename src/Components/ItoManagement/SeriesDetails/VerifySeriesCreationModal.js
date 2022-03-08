@@ -40,7 +40,7 @@ const VerifySeriesCreationModal = ({ showModal, setShowModal }) => {
         </button>
         <button
           type="button"
-          className="btn btn-danger w-25 btn-md"
+          className="btn btn-seconday w-25 btn-md"
           onClick={(e) => verifyRequestHandler(e, "rejected")}
         >
           Reject

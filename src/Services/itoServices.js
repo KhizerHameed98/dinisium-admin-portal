@@ -633,7 +633,9 @@ export const getSeriesDraftById = (id) => {
   // console.log("id at hitting" , id)
   return async (dispatch) => {
     try {
-      const seriesDraftsById = await axios.get(ito.GET_SERIES_BY_ID + `${id}`);
+      const seriesDraftsById = await axios.get(
+        ito.GET_SERIES_DRAFTS_BY_ID.replace(":id", id)
+      );
       dispatch({
         type: GET_SERIESDRAFTS_BY_ID,
         payload: seriesDraftsById.data.data,

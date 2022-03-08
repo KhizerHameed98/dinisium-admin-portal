@@ -2,7 +2,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import moment from "moment";
 export const columns = (readMore, setReadMore) => {
   return [
-    { title: "Person Name", field: "fname" },
+    { title: "Name", field: "fname" },
     { title: "Token Name", field: "token_name" },
     { title: "Token Symbol", field: "token_symbol" },
     { title: "Order Type", field: "order_type" },
@@ -27,6 +27,7 @@ export const columns = (readMore, setReadMore) => {
     //     return `${rowData.transaction_hash}`;
     //   },
     // },
+
     {
       title: "Transaction Hash",
       render: (rowData) => {

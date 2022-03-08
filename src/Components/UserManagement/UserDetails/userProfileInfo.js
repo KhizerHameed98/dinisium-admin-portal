@@ -16,6 +16,7 @@ const UserProfileInfo = ({
 
   return (
     <div className="card bg-cr-1 pu-rel text-white p-5 mb-3 ">
+      {/* {console.log("userProfile==>", userProfile)} */}
       <img
         src={
           userProfile && userProfile.personal_photo

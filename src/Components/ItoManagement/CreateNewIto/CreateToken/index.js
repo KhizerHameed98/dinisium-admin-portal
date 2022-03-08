@@ -51,6 +51,13 @@ const CreateToken = ({
   );
   console.log("THRESHOLDsds =============>", threshold);
   console.log("IS SUBSCRIPTION:", isSubscription);
+
+  const subscriptionDetail = useSelector(
+    (state) => state.subscription?.subscriptionDetail || {}
+  );
+
+  console.log("SUBSCRIPTION DETAILS :", subscriptionDetail);
+
   const onChange = (e) => {
     const re = /^[0-9\b]+$/;
     if (e.target.value === "" || re.test(e.target.value)) {
@@ -149,7 +156,7 @@ const CreateToken = ({
                   value={
                     location.pathname === "/admin/ito-management/create-new-ito"
                       ? token_name
-                      : draftUpdatedData.token_namee
+                      : subscriptionDetail.ito_name
                   }
                   // value={token_name}
                   disabled={isSubscription}

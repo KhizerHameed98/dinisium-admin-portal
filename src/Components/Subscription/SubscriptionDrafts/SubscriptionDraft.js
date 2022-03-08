@@ -30,7 +30,7 @@ const SubscriptionDraft = () => {
             <TableWithDetailButton
               data={Drafts}
               columns={columns(viewDetails)}
-              title={"SUBSCRIPTIONS DRAFT"}
+              title={" DRAFT SUBSCRIPTIONS"}
             />
           </div>
         </div>

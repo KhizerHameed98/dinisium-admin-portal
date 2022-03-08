@@ -13,7 +13,7 @@ const SubscriptionDetail = ({ match }) => {
   const subscriptionDetail = useSelector(
     (state) => state.subscription?.subscriptionDetail
   );
-
+  console.log("Subscription details :", subscriptionDetail);
   const stateId = useSelector((state) => {
     return state?.auth?.userDetails?.id;
   });

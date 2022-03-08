@@ -95,14 +95,14 @@ const VerifyStatusModal = ({
 
             <button
               type="button"
-              className="btn btn-success btn-green w-30 btn-md mr-2"
+              className="btn btn-primary btn-green w-30 btn-md mr-2"
               onClick={clickApproved}
             >
               Accept
             </button>
             <button
               type="button"
-              className="btn btn-danger w-30 btn-md mr-2"
+              className="btn btn-secondary w-30 btn-md mr-2"
               onClick={rejectionModalHandler}
             >
               Reject

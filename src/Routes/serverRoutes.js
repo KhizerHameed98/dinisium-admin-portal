@@ -1,6 +1,6 @@
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 // const SERVER_URL = "http://localhost:5000/api";
-// const SERVER_URL = "http://33a5-103-105-211-114.ngrok.io/api";
+// const SERVER_URL = "https://6412-72-255-5-119.ngrok.io/api";
 
 export const auth = {
   LOGIN: `${SERVER_URL}/v2/auth/login`,
@@ -62,7 +62,7 @@ export const ito = {
   UPDATE_ITO_DRAFTS: `${SERVER_URL}/v2/draft/update/:id`,
   SAVE_AS_DRAFT_SERIES: `${SERVER_URL}/v2/itoseries/create/draft`,
   GET_SERIES_DRAFTS: `${SERVER_URL}/v2/get/itoseries/draft`,
-  GET_SERIES_DRAFTS_BY_ID: `${SERVER_URL}//v2/itoseries/draft/:id`,
+  GET_SERIES_DRAFTS_BY_ID: `${SERVER_URL}/v2/itoseries/draft/:id`,
   UPDATE_SERIES_DRAFT: `${SERVER_URL}/v2/itoseries/update/draft/:id`,
 };
 
@@ -166,8 +166,8 @@ export const subscription = {
   SAVE_AS_DRFAT: `${SERVER_URL}/v2/draft/subscriptions`,
   GET_SUBSCRIPTION: `${SERVER_URL}/v2/get/draft/subscriptions`,
   GET_SUBSCRIPTION_DRAFTS: `${SERVER_URL}/v2/get/draft/subscriptions`,
-  GET_SUBSCRIPTION_DRAFTS_BY_ID : `${SERVER_URL}/v2/get/draft/subscriptions/:id`,
-  UPDATE_SUBSCRIPTION : `${SERVER_URL}/v2/update/draft/subscriptions/:id`
+  GET_SUBSCRIPTION_DRAFTS_BY_ID: `${SERVER_URL}/v2/get/draft/subscriptions/:id`,
+  UPDATE_SUBSCRIPTION: `${SERVER_URL}/v2/update/draft/subscriptions/:id`,
 };
 
 export const WithdrawRequest = {

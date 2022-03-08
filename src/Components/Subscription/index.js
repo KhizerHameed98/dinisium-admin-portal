@@ -13,6 +13,9 @@ const Subscription = () => {
     <div className="col-12 col-md-10 offset-md-1">
       {/* <!-- inner row --> */}
       <div className="row">
+        <div className="col-md-12">
+          <SubscriptionDraft />
+        </div>
         <div className="col-md-12 mb-2">
           <Link
             className="exp-mr-link text-dr-green"
@@ -25,9 +28,6 @@ const Subscription = () => {
 
         <div className="col-md-12">
           <SubscriptionList />
-        </div>
-        <div className="col-md-12">
-          <SubscriptionDraft />
         </div>
       </div>
       {/* <!-- end inner row --> */}
